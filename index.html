@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Doação Interativa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Ajude uma Causa CPSB</h1>
+    </header>
+
+    <main>
+        <section class="fundraising-overall">
+            <h2>Progresso Geral da Angariação de Fundos</h2>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="overall-progress" style="width: 0%;">
+                    <span class="progress-text">0€ / 4.160.000€ (0%)</span>
+                </div>
+            </div>
+            <p>Montante total angariado: <span id="total-raised-display">0€</span></p>
+            <p>Objetivo Total: 4.160.000€</p>
+        </section>
+
+        <hr>
+
+        <section class="causes-container">
+            <h2>Escolha uma Causa Específica</h2>
+
+            <div class="cause-item" id="cause-bus">
+                <h3>Autocarro (Bus)</h3>
+                <div class="cause-details">
+                    <p>Precisamos de um novo autocarro para transportar os nossos membros.</p>
+                    <p>Objetivo: <span class="goal-amount">160.000</span>€</p>
+                    <p>Angariado: <span class="raised-amount">0</span>€</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar individual-progress" style="width: 0%;">0%</div>
+                    </div>
+                    <button class="donate-button" data-cause-id="bus" data-cause-name="Autocarro (Bus)">Doar para o Autocarro</button>
+                </div>
+            </div>
+
+            <div class="cause-item" id="cause-elders">
+                <h3>Edifício para Idosos (Elder people building)</h3>
+                <div class="cause-details">
+                    <p>Ajude-nos a construir um novo espaço para os nossos idosos.</p>
+                    <p>Objetivo: <span class="goal-amount">2.500.000</span>€</p>
+                    <p>Angariado: <span class="raised-amount">0</span>€</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar individual-progress" style="width: 0%;">0%</div>
+                    </div>
+                    <button class="donate-button" data-cause-id="elders" data-cause-name="Edifício para Idosos">Doar para o Edifício dos Idosos</button>
+                </div>
+            </div>
+
+            <div class="cause-item" id="cause-children">
+                <h3>Edifício para Crianças (Children building)</h3>
+                <div class="cause-details">
+                    <p>Queremos construir um novo edifício seguro e divertido para as crianças.</p>
+                    <p>Objetivo: <span class="goal-amount">1.500.000</span>€</p>
+                    <p>Angariado: <span class="raised-amount">0</span>€</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar individual-progress" style="width: 0%;">0%</div>
+                    </div>
+                    <button class="donate-button" data-cause-id="children" data-cause-name="Edifício para Crianças">Doar para o Edifício das Crianças</button>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="donations-dashboard">
+            <h2>Dashboard de Doadores</h2>
+            <ul id="donations-list">
+                <li>Anónimo doou 50€ para Autocarro (Bus) </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 A Tua Organização de Doações</p>
+    </footer>
+
+    <div id="donation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modal-title">Doar para Causa</h3>
+            <form id="donation-form">
+                <input type="hidden" id="cause-id-input" name="causeId">
+                <div>
+                    <label for="donor-name">Nome:</label>
+                    <input type="text" id="donor-name" name="donorName" required>
+                </div>
+                <div>
+                    <label for="donor-email">Email:</label>
+                    <input type="email" id="donor-email" name="donorEmail" required>
+                </div>
+                <div>
+                    <label for="donation-amount">Quantidade a Doar (€):</label>
+                    <input type="number" id="donation-amount" name="donationAmount" min="1" required>
+                </div>
+                <div>
+                    <input type="checkbox" id="anonymous-donation" name="anonymousDonation">
+                    <label for="anonymous-donation">Doar anonimamente</label>
+                </div>
+                <button type="submit">Confirmar Doação</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
